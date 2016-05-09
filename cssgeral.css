@@ -1,0 +1,649 @@
+@charset "utf-8";
+
+/*---------------------Geral do Site---------------------*/
+* {
+   margin:0px;                    /* Ajusta a margin da pagina geral */
+   padding:0;                     /* Ajusta o padding da pagina geral */
+}
+
+body {
+   background:url(img/bg2.jpg) fixed center;  /* Background Pagina */
+}
+/*--------------PAGINA INTEIRA(Menos o Topo)--------------*/
+#tudo { 
+   width: 950px;               /* Largura pagina inteira */
+   margin:0 auto;              /*Solução Centralizar Pagina inteira - http://maujor.com/dicas/pg_centrada.php*/
+}
+/*--------------------BANNER DA PAGINA--------------------*/
+#banner {
+   background:url(img/banner.jpg);/* Fundo Banner */
+   background-repeat:no-repeat;/* Nao repetir Banner */
+   height:150px;               /* Altura Banner */
+	
+}
+/*--------------------BOTÃO DA PAGINA---------------------*/
+#menu {
+	clear:both;                /* Complemento usado com o float */
+	float:left;                /* Coloca o menu na horizontal e alinha as sections*/
+	color: #FFF;               /* Cor da Fonte do menu */
+	width:950px;               /* Tamanho da Barra do menu */
+	background: #299a0b;       /* Para navegadores antigos que não possui linear-gradient */
+    background: linear-gradient(to bottom, #299a0b 0%,#306808 100%); /* W3C */
+	font: bold 12px 'Helvetica Neue', Tahoma, 'lucida grande',verdana; /* Deixa em negrito e escolhe a fonte usada */
+    border-bottom-right-radius: 6px;        /* Arredonda a borda direita */
+    border-bottom-left-radius: 6px;         /* Arredonda a borda esquerda */
+}
+#menu a {
+	text-decoration:none;      /* Desativa a Decoração dos links */
+}
+#menu ul {
+	list-style-type:none;      /* Desativa os marcadores da lista */
+	margin:0px;                /* Deixa sem espaços fora da lista */
+	padding:0px;               /* Deixa sem espaços dentro da lista */
+	
+} 
+#menu ul li {
+	float:left;                /* Alinha a lista a Esquerda */                
+	position:relative;         /* Faz o menu aparecer embaixo do botao, estando relativo ao botão */
+	z-index:99 auto !important;/* Define o botao como prioridade para aparecer na tela */
+} 
+#menu ul li a {
+	padding:1px 10px 1px 10px;/* Ajuste a posição dos botões */
+	color: #FFF;               /* Cor do botão */
+    background: linear-gradient(to bottom, #299a0b 0%,#306808 100%); /* W3C */
+	display:block;             /* Define o texto como um bloco, ajustando ele na tela */
+	height:35px;               /* Altura do botão */
+	line-height:35px;          /* Ajusta altura do texto dentro do botão */             
+	float:none !important ;    /* Botões alinhando um embaixo do outro */
+
+} 
+#menu ul li ul {
+	display:none;              /* Esconde o conteudo na tela "IMPORTANTE PARA O BOTÃO */
+} 
+#menu ul li:hover a {
+	background:#357F00;        /* Cor que o fundo fica enquanto passa o mouse */
+	color:#FFF;                /* Cor que o texto fica enquanto passa o mouse */
+}
+#menu ul li:hover ul {
+	position:absolute;         /* Define a posição absoluta */
+	display:block;             /* Define o Texto como um bloco ajustando alguns valores de altura do texto */
+	z-index:9;                 /* Usado para colocar o menu como secundario ao botão */
+	top:36px;                  /* Altura do Menu, de acordo com o botão */
+} 
+#menu ul li:hover ul li a {          
+	height:auto;               /* Altura "auto" pois definirei na line-height */
+	display:block;             /* Texto como Bloco */           
+	width:180px;               /* Largura das opções do menu */  
+	padding:5px;               /* Ajuste das opções dentro do menu */
+	line-height:19px;          /* Ajusta a altura dos botões */
+} 
+#menu ul li:hover ul li a:hover {
+	background:#126300;        /* Fundo opções dentro do menu passando o mouse*/
+	color:#FFF;                /* Cor opções dentro do menu passando o mouse*/
+} 
+#menu ul li a:hover {
+	background:#299a0b;        /* Fundo opções dentro do menu ao PASSAR O MOUSE*/
+	color:#FFF;                /* Cor opções dentro do menu ao PASSAR O MOUSE*/
+} 
+#menu ul li ul li a:visited { 
+	color:#FFF;                /* Cor do texto do menu */
+}
+#menu ul li a:hover ul {
+	position:absolute;         /* Posição absoluta da lista */
+	z-index:9;                 /* Define a index 9, sendo assim item abaixo do botão definido como 10*/
+	display:block;             /* Define a lista como um bloco */
+	width:180px;               /* Largura definida para 180px */
+	top:29px;                  /* Altura das opções do menu */
+} 
+#menu ul li a:hover ul li a {
+	display:block;             /* Define a lista como um bloco */
+	padding:4px 16px 4px 16px; /* Ajusta a altura e largura do menu */
+	width:180px;               /* Largura */
+	line-height:19px;          /* Ajusta a altura do texto dentro do menu*/
+} 
+
+/*---------------------LATERAL PAGINA---------------------*/
+#lateral  { 
+   width:300px;                /* Largura da lateral da pagina*/ 
+   height:520px;               /* Altura da lateral da pagina*/ 
+   float:left;                 /* Alinha a barra lateral*/ 
+   background:#FFF;            /* Cor de fundo da lateral*/ 
+   margin-top:10px;            /* Espaço acima da barra lateral*/
+   border-radius: 6px;         /*Arredonda a Borda geral */
+}
+#lateral span {
+   border-top-left-radius:6px;
+   border-top-right-radius:6px;
+   width:300px;
+   height:30px;
+   background: linear-gradient(to bottom, #b2b2b2 0%,#898989 55%,#7f7f7f 100%);
+   color:#f3f3f3;
+   padding-top:10px;
+   text-align:center;
+   display:block;
+   font-weight:700;
+}
+#lateral p {
+   font-size:13px;
+   padding-left:10px;
+   padding-right:10px;
+}
+#lateral h5 {
+   color:#387A09; 
+   font-size:14px;
+   padding-bottom:10px;
+   font-weight:bold;
+   text-align:center;
+}
+#lateral hr {
+   clear:both;
+   margin-left:10px;
+   margin-right:10px;
+   }
+
+#lateral a {
+   color:#fff; 
+   background:#387A09;
+   font-size:15px;
+   font-weight:bold;
+   float:right;
+   padding:5px;
+   text-decoration:none;
+   margin-right:10px;
+   margin-bottom:5px;
+   border-radius:6px;
+}
+#lateral a:hover {
+   background:#17870A;
+   color:#ccc;
+}
+
+/*-------------------==--CENTRO PAGINA---------------------*/
+#centro { 
+   width:640px;                /* Largura do centro da pagina*/
+   height:480px;               /* Altura do centro da pagina*/ 
+   float:left;                 /* Alinha o centro */ 
+   margin-right:10px;           /* Define 10px de espaço a lateral esquerda*/
+   margin-top:10px;            /* Define 10px de espaço acima do centro*/
+   background:#FFF;            /* Cor de fundo do centro*/
+   border-radius: 6px;         /*Arredonda a Borda geral */
+
+}
+#centro span{
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+	width:640px;
+	height:30px;
+	background: linear-gradient(to bottom, #b2b2b2 0%,#898989 55%,#7f7f7f 100%);
+	color:#f3f3f3;
+	padding-top:10px;
+	text-align:center;
+	display:block;
+	font-weight:700;
+}
+
+/*--------------------CRENTRO 2 DA PAGINA-------------------*/
+#centro2 {
+   background-color:#FFF;            /* Cor de fundo dos creditos*/
+   height:780px;               /* Altura da barra de creditos*/
+   margin-top:10px;            /* Define margin superior*/
+   width:950px;                /* Largura da barra*/
+   float:right;                /* Ajusta a barra embaixo das outras*/
+   border-radius: 6px;         /* Arredonda a Borda geral */
+}
+#centro2 span{
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+	width:950px;
+	height:30px;
+	background: linear-gradient(to bottom, #b2b2b2 0%,#898989 55%,#7f7f7f 100%);
+	color:#f3f3f3;
+	padding-top:10px;
+	text-align:center;
+	display:block;
+	font-weight:700;
+}
+.divpag {
+   float:left;
+   width:450px;
+   height:auto;
+   margin-top:10px;
+   margin-left:15px;
+}
+.divpag img{
+   float:left;
+   margin-top:20px;
+   margin-bottom:20px;
+   margin-right:10px;
+}
+.divpag p{
+   margin-top:30px;
+   color:#292929;
+   font-weight:bold;
+}
+.divpag h4 {
+   color:#387A09;
+   font-size:17px;   
+}
+.divpag h1 {
+   font-size:17px; 
+   color:#fff;
+   padding:5px;
+   background:#5790dc;
+}
+.divpag hr {
+   clear:both;
+}
+.divpag a {
+   text-decoration:none;
+}
+/*---------------------CENTRO CONTEUDO ---------------------*/
+#conteudoemp { 
+   width:910px;                /* Largura do centro da pagina*/
+   height:900px;               /* Altura do centro da pagina*/ 
+   background:#FFF;            /* Cor de fundo do centro*/
+   border-radius: 6px;         /*Arredonda a Borda geral */
+   padding:20px;               /* Margin Interna Total do conteudo */
+   margin-top:10px;            /* Margin do topo do conteudo */
+   word-wrap: break-word;      /* Faz as linhas quebrarem ao fim da DIV */
+   float:left;                 /* Flutua a esquerda */
+
+}
+#conteudoemp p{
+   width:590px;                /* Largura do paragrafo */
+   margin-top:20px;            /* Margin do Topo do paragrafo */
+   font-size: 15px;            /* Tamanho da fonte */
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;/* Tipo de fonte */
+   color:#292929;
+}
+#conteudoemp span{
+   color:#075E11;              /* Cor da Fonte */
+   font-family: Tahoma, sans-serif;/* Tipo de fonte */
+   font-weight:bold;           /* Grossura da fonte */
+}
+#conteudoemp ul{
+   margin-left:330px;          /* Margin esquerda da lista */
+   font-size: 15px;            /* Tamanho da fonte */
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;/* Tipo de fonte */
+   color:#292929;
+}
+#conteudoemp h2 {
+   color:#387A09;              /* Cor da Fonte */
+   margin-bottom:10px;         /* Margin de baixo do titulo */
+   font-family: Tahoma, sans-serif;/* Tipo da fonte do titulo*/
+   
+}
+
+.imgemp1{/* Imagem 1 Conteudo Empresa*/
+   margin-top:-200px;          /* Margin do TOPO */
+   float:right;                /* Imagem flutuando a direita */
+   border-radius:30px;         /* Borda arredondada*/
+}
+.imgemp2{/* Imagem 2 Conteudo Empresa*/
+   margin-top:50px;            /* Margin do TOPO */
+   float:right;                /* Imagem flutuando a direita */
+   border-radius:30px;         /* Borda arredondada*/
+} 
+.imgemp5{/* Imagem 3 Conteudo Empresa*/
+   float:left;                 /* Imagem flutuando a esquerda */
+   margin-top:30px;            /* Margin do TOPO */
+   border-radius:20px;         /* Borda arredondada*/
+}
+/*-------------------CONTEUDO CONTATO--------------------*/
+#conteudocont { 
+   width:910px;                /* Largura do centro da pagina*/
+   height:900px;               /* Altura do centro da pagina*/ 
+   background:#FFF;            /* Cor de fundo do centro*/
+   border-radius: 6px;         /*Arredonda a Borda geral */
+   padding:20px;               /* Margin Interna conteudo contato */
+   margin-top:10px;            /* Margin do topo conteudo contato */
+   word-wrap: break-word;      /* Linha quebrando no fim da section */
+   float:left;                 /* Conteudo Flutuando a esquerda */
+
+}
+#conteudocont h2{
+   padding-top:50px;           /* Margin Interna superior */
+   padding-bottom:30px;        /* Margin Interna inferior */
+   margin-left:180px;          /* Margin Esquerda */
+   color:#256600;              /* Cor da fonte */
+   font-weight:bold;           /* Grossura da fonte*/
+   font-family: Tahoma, sans-serif;/* Estilo da fonte */
+   clear:both;                 /* Faz ajuste do titulo para nenhum item fluar nem na esquerda nem da direita do titulo */
+}
+#conteudocont form{
+   font-weight:bold;           /* Grossura da fonte*/          
+   padding-left:180px;         /* Margin interna esquerda */
+}
+#conteudocont input[type=text] {
+   width:500px;                /* Largura do centro da pagina*/
+   height:25px;                /* Altura do centro da pagina*/ 
+   background: #f9f9f9;        /* Cor do fundo dos campos de texto */
+   border: 1px solid #ccc;     /* Largura, tipo e cor da borda */
+}
+#conteudocont p {
+   margin-top:20px;            /* Margin superior */
+}
+#conteudocont span {
+   color:#333;                 /*Cor da fonte */
+   font-family: Tahoma;
+   font-size: 14px;
+}
+button {
+   margin-top: 30px;           /* Define margin superior*/
+   margin-left: 100px;         /* Define margin esquerda*/
+   width: 300px;               /* Largura do botão */
+   height: 35px;               /* Altura do botão */
+   border: 1px solid #ccc;     /* Largura, tipo e cor da borda */
+   border-radius: 10px;        /* Arredondamento da borda */
+   background: linear-gradient(to bottom, #83C900 51%, #548500 100%, #71B800 100%);/* Cor do botão*/
+   font-family: Tahoma;        /* Tipo da fonte */
+   font-weight:bold;           /* Grossura da fonte */
+   color:#000;                 /* Cor da fonte */
+
+}
+button:hover {
+   background: linear-gradient(to bottom, #3F6600 0%, #548500 51%, #83C900 100%, #71B800 100%);/* Cor do botão apos passar o mouse*/
+   cursor:pointer;             /* Cursor vira "pointer" */
+   color:#003501;              /*Cor da fonte */
+
+}
+textarea{
+   width: 500px;               /* Largura do botão*/
+   height: 120px;              /* Altura do botão*/
+   background: #f9f9f9;        /* Cor do fundo do campo de mensagem*/
+   border: 1px solid #ccc;     /* Largura, tipo e cor da borda*/
+   padding: 5px;               /* Margin interior do textarea*/
+   font-family: Tahoma, sans-serif;/*Tipo da fonte*/
+   resize:none;                /* Desabilita o redimensionamento*/
+}
+select {
+   width: 200px;               /* Largura do botão*/
+   background: #f9f9f9;        /* Cor do fundo*/
+   height: 25px;               /* Altura do botão*/
+   border: 1px solid #ccc;     /* Largura, tipo e cor da borda*/
+}
+.casa {
+   float:left;                 /* Flutuar a Esquerda */
+   margin-top:20px;            /* Margin superior */
+   border-radius:20px;         /* Arredondamento da borda */
+}
+.endereco {
+   padding:20px;               /* Margin Interior */
+   width: 260px;               /* Largura do botão*/
+   float:left;                 /* Flutuar a esquerda*/
+   margin-top:45px;            /* Define margin superior*/
+   margin-left:20px;           /* Define margin esquerda*/
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;/* Tipo de fonte */
+   font-size: 15px;
+
+}
+.endereco span {
+   font-weight:bold;           /* Grossura da fonte */
+}
+.localizacao{
+   float:right;                /* Flutuar a direita */
+   margin-top:10px;            /* Margin superior */
+   border: 1px solid #333;     /* Largura, tipo e cor da borda*/      
+}
+/*-------------------CONTEUDO CONTATO--------------------*/
+#conteudoparc { 
+   width:910px;                /* Largura do centro da pagina*/
+   height:900px;               /* Altura do centro da pagina*/ 
+   background:#FFF;            /* Cor de fundo do centro*/
+   border-radius: 6px;         /* Arredonda a Borda geral */
+   padding:20px;               /* Margin interior total */
+   margin-top:10px;            /* Margin Superior*/
+   word-wrap: break-word;      /* Texto somente ate o fim da section */
+   float:left;                 /* Flutuar a esquerda */
+
+}
+#conteudoparc img {
+   float:left;                 /* Flutuar a esquerda */
+}
+#conteudoparc p {
+   float:left;                 /* Flutuar a esquerda */
+   width:680px;                /* Largura da Pagina */
+   margin-top:15px;            /* Margin Superior */
+   margin-bottom:15px;         /* Margin Inferior */
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;/* Tipo de fonte */
+   font-size:15px;             /* Tamanho da Fonte */
+   color:#292929;              /* Cor da Fonte */
+} 
+#conteudoparc h2 {              
+   font-weight:bold;
+   color:#387A09;
+   font-size:20px;
+   font-family:Tahoma, sans-serif;
+   padding-bottom:10px;
+}
+#conteudoparc hr {
+   clear:both;
+}
+.oficial {
+   text-align:right;           /* Texto Alinhado a Direita */
+   padding-bottom:10px;        /* Margin interna inferior */
+   padding-right:20px;         /* Margin interna direita*/
+}
+.oficial span{
+   font-weight:bold;           /* Grossura da Fonte */
+   color:#387A09;              /* Cor da Fonte */
+   font-size:18px;             /* Tamanho da Fonte */
+  
+}
+.oficial a{
+   text-decoration:underline;  /* Texto sublinado */
+   color:#000;                 /* Cor da fonte */
+   font-weight:bold;           /* Grossura da Fonte */
+}
+.parceiro {
+   width:910px;                /* Largura da pagina */
+   margin-top:20px;            /* Margin superior */
+   padding-bottom:30px;        /* Margin interior inferior */
+   clear:both;                 /* Objeto sem flutuar nem a direita nem a esquerda */
+
+}
+/*-------------------CONTEUDO CONTATO--------------------*/
+#centroduvidas { 
+   width:850px;                /* Largura do centro da pagina*/
+   height:auto;                /* Altura do centro da pagina automatica*/ 
+   background:#FFF;            /* Cor de fundo do centro*/
+   border-radius: 6px;         /* Arredonda a Borda geral */
+   padding:20px;               /* Margin interior total */
+   margin-top:10px;            /* Margin Superior*/
+   word-wrap: break-word;      /* Texto somente ate o fim da section */
+   float:left;                 /* Flutuar a esquerda */
+   padding-left:50px;          /* Margin interior esquerda */
+   padding-right:50px;         /* Margin interior direita */
+}
+#centroduvidas p {
+   margin-top:15px;            /* Margin Superior*/
+   margin-bottom:15px;         /* Margin Inferior*/
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;/* Tipo de fonte */
+   font-size:15px;             /* Tamanho da fonte */
+   color:#292929;              /* Cor da fonte */
+}
+#centroduvidas img {
+   border-radius:20px;         /* Arredondamento da borda */
+}
+#centroduvidas span {
+   color:#333;                 
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;
+   font-size: 14px;
+   font-weight:bold;
+}
+#centroduvidas h2 {
+   font-weight:bold;
+   color:#387A09;
+   font-size:20px;
+   font-family:Tahoma, sans-serif;
+   padding-bottom:10px;
+}
+#centroduvidas h3 {
+   font-family:Tahoma, sans-serif;
+   font-size:13px;
+   margin-top:50px;
+   background:#5790dc;
+   padding:10px;
+   text-align:center;
+   font-weight:bold;
+   color:#fff;
+}
+#centroduvidas a {
+   text-decoration:none;
+   color:#000;
+}
+#centroduvidas hr {
+   clear:both;
+   margin-bottom:10px;
+   margin-top:10px;
+}
+/*-------------------CONTEUDO PRODUTO--------------------*/
+#produto1 { 
+   width:900px;                /* Largura do centro da pagina*/
+   height:auto;                /* Altura do centro da pagina automatica*/ 
+   background:#FFF;            /* Cor de fundo do centro*/
+   border-radius: 6px;         /* Arredonda a Borda geral */
+   padding:20px;               /* Margin interior total */
+   margin-top:10px;            /* Margin Superior*/
+   word-wrap: break-word;      /* Texto somente ate o fim da section */
+   float:left;                 /* Flutuar a esquerda */
+   padding-left:30px;
+}
+#produto1 p {
+   margin-top:15px;
+   margin-bottom:15px;
+   width:470px;
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;/* Tipo de fonte */
+   font-size:15px;
+   float:left;
+   color:#292929;
+}
+#produto1 img {
+   border-radius:20px;
+   float:left;
+}
+#produto1 span {
+   color:#333;               /*Cor da fonte */
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;/* Tipo de fonte */
+   font-size: 14px;
+   font-weight:bold;
+}
+#produto1 h2 {
+   font-weight:bold;
+   color:#387A09;
+   font-size:20px;
+   font-family:Tahoma, sans-serif;
+   padding-bottom:10px;
+}
+#produto1 hr {
+   clear:both;
+   margin-bottom:10px;
+   margin-top:10px;
+}
+/*-------------------CONTEUDO PRODUTO--------------------*/
+#produto3 { 
+   width:900px;                /* Largura do centro da pagina*/
+   height:auto;                /* Altura do centro da pagina automatica*/ 
+   background:#FFF;            /* Cor de fundo do centro*/
+   border-radius: 6px;         /* Arredonda a Borda geral */
+   padding:20px;               /* Margin interior total */
+   margin-top:10px;            /* Margin Superior*/
+   word-wrap: break-word;      /* Texto somente ate o fim da section */
+   float:left;                 /* Flutuar a esquerda */
+   padding-left:30px;
+}
+#produto3 p {
+   margin-top:15px;
+   margin-bottom:15px;
+   padding-right:15px;
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;/* Tipo de fonte */
+   font-size:15px;
+   float:left;
+   color:#292929;
+}
+#produto3 img {
+   margin-top:20px;
+   margin-bottom:20px;
+   border-radius:20px;
+}
+#produto3 span {
+   color:#333;               /*Cor da fonte */
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;/* Tipo de fonte */
+   font-size: 14px;
+   font-weight:bold;
+}
+#produto3 h2 {
+   font-weight:bold;
+   color:#387A09;
+   font-size:20px;
+   font-family:Tahoma, sans-serif;
+   padding-bottom:10px;
+}
+
+/*------------------NOTICIA DA PAGINA-------------------*/
+#noticia { 
+   width:900px;                /* Largura do centro da pagina*/
+   height:auto;                /* Altura do centro da pagina automatica*/ 
+   background:#FFF;            /* Cor de fundo do centro*/
+   border-radius: 6px;         /* Arredonda a Borda geral */
+   padding:20px;               /* Margin interior total */
+   margin-top:10px;            /* Margin Superior*/
+   word-wrap: break-word;      /* Texto somente ate o fim da section */
+   float:left;                 /* Flutuar a esquerda */
+   padding-left:30px;
+}
+#noticia span {
+   color:#333;               /*Cor da fonte */
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;/* Tipo de fonte */
+   font-size: 18px;
+   font-weight:bold;
+}
+#noticia hr {
+   margin-bottom:10px;
+}
+#noticia img {
+   margin-top:10px;
+   border-radius:20px;
+}
+#noticia p {
+   margin-top:15px;
+   margin-bottom:15px;
+   padding-right:15px;
+   font-family:'Helvetica Neue', Tahoma, 'lucida grande',verdana;/* Tipo de fonte */
+   font-size:15px;
+   float:left;
+   color:#292929;
+}
+#noticia h2 {
+   font-weight:bold;
+   color:#387A09;
+   font-size:20px;
+   font-family:Tahoma, sans-serif;
+   padding-bottom:10px;
+}
+/*------------------CREDITOS DA PAGINA-------------------*/
+
+#creditos {
+   height:40px;                /* Altura da barra de creditos*/
+   margin-top:10px;            /* Define margin superior*/
+   padding-top:10px;
+   padding-bottom:10px;
+   width:950px;                /* Largura da barra*/
+   float:right;                /* Ajusta a barra embaixo das outras*/
+   background: linear-gradient(to bottom, #299a0b 0%,#306808 100%); /* W3C */
+   border-radius:6px;          /* Arredondamento da borda */
+   color:#fff;                 /* Cor da fonte */
+   text-align:center;          /* Texto alinhado no centro*/
+   margin-bottom:50px;         /* Margin inferior */
+} 
+#creditos span{
+   font-weight:bold;           /* Grossura da fonte */
+}
+#creditos a{
+   margin:20px;                /* Margin total 20px*/
+   text-decoration:underline;  /* Texto com decoração sublinado */
+   color:#fff;                 /* Cor da fonte */
+   font-weight:bold;           /* Grossura da fonte */
+   font-size:12px;             /* Tamanho da fonte*/   
+   cursor: pointer;            /* Cursor como pointer */
+}
